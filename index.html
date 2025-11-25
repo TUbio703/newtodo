@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todoアプリ</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header-container">
+            <h1>Todoアプリ</h1>
+            <div class="header-buttons">
+                <button id="theme-toggle-button" title="テーマ切り替え">☀️</button>
+                <button id="trash-button" title="ゴミ箱を開く">🗑️</button>
+            </div>
+        </div>
+        <form id="todo-form">
+            <div class="input-group">
+                <input type="text" id="todo-input" placeholder="新しいTodoを追加">
+                <input type="date" id="due-date-input" title="期日">
+                <select id="label-select">
+                    <option value="work">仕事</option>
+                    <option value="private">プライベート</option>
+                    <option value="shopping">買い物</option>
+                    <option value="none">-</option>
+                </select>
+            </div>
+            <button id="add-button" type="submit">追加</button> <!-- このボタンは input-group の外に置きます -->
+        </form>
+        <!-- フィルターボタンエリア -->
+        <div id="filter-buttons" class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">すべて</button>
+            <button class="filter-btn" data-filter="work">仕事</button>
+            <button class="filter-btn" data-filter="private">プライベート</button>
+            <button class="filter-btn" data-filter="shopping">買い物</button>
+        </div>
+        <ul id="todo-list"></ul>
+    </div>
+    <div class="container-right" id="latest-task-display">
+        <h2>完了したTodo</h2>
+        <ul id="completed-todo-list"></ul>
+    </div>
+    <!-- ゴミ箱エリア -->
+    <div id="trash-container" class="trash-container hidden">
+        <h2>ゴミ箱 <button id="close-trash-button">×</button></h2>
+        <p>削除したタスクは最大10件まで保持されます。</p>
+        <ul id="trash-list"></ul>
+    </div>
+    <script src="src/js/app.js"></script>
+</body>
+</html>
